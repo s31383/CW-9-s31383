@@ -10,7 +10,7 @@ namespace CW_9_s31383.Controllers;
 public class PrescriptionController(IDbService dbService) : ControllerBase
 {
     [HttpPost]
-    public async Task<ActionResult> Post(CancellationToken cancellationToken,PrescriptionPostDto prescription)
+    public async Task<ActionResult> Post([FromBody]PrescriptionPostDto prescription,CancellationToken cancellationToken)
     {
         try
         {

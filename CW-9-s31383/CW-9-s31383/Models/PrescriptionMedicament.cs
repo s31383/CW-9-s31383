@@ -10,7 +10,7 @@ public class PrescriptionMedicament
 {
     public int? Dose { get; set; }
     
-    [Required] [MaxLength(100)] 
+    [MaxLength(100)] 
     public string Details { get; set; } = null!;
 
     public int IdMedicament { get; set; }
