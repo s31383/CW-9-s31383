@@ -4,14 +4,10 @@ using System.ComponentModel.DataAnnotations;
 public class PrescriptionPostDto
 {
     public PrescriptionPostDtoPatient Patient { get; set; } = null!;
-    public PrescriptionPostDtoDoctor Doctor { get; set; } = null!;
     public IList<PrescriptionPostDtoMedicament> Medicament { get; set; } = null!;
     public DateTime Date { get; set; }
     public DateTime DueDate { get; set; }
 }
-
-
-
 
 public class PrescriptionPostDtoPatient
 {
@@ -21,20 +17,6 @@ public class PrescriptionPostDtoPatient
     [MaxLength(100)]
     public string LastName { get; set; } = null!;
     public DateTime Birthdate { get; set; }
-}
-
-public class PrescriptionPostDtoDoctor
-{
-    public int IdDoctor { get; set; }
-    [Required]
-    [MaxLength(100)]
-    public string FirstName { get; set; } = null!;
-    [Required]
-    [MaxLength(100)]
-    public string LastName { get; set; } = null!;
-    [Required]
-    [MaxLength(100)]
-    public string Email { get; set; } = null!;
 }
 public class PrescriptionPostDtoMedicament
 {

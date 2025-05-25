@@ -14,4 +14,5 @@ public class Patient
     public string LastName { get; set; } = null!;
     [Required]
     public DateTime BirthDate { get; set; }
+    public virtual ICollection<Prescription> Prescriptions { get; set; } = null!;
 }

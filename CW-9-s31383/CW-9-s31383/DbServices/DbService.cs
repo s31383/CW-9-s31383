@@ -9,9 +9,11 @@ public class DbService(HospitalDbContext dbContext) : IDbService
 {
     public async Task PostPrescription(CancellationToken cancellationToken, PrescriptionPostDto prescriptionPostDto)
     {
-        var prescription = new Prescription
+        var prescription = new PrescriptionMedicament
         {
-            
+            Date = prescriptionPostDto.Date,
+            DueDate = prescriptionPostDto.DueDate,
+            Patient = prescriptionPostDto.,
             
         };
         dbContext.Add(prescription);
