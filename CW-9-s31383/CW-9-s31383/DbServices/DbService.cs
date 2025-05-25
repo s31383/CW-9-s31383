@@ -15,7 +15,7 @@ public class DbService(HospitalDbContext dbContext) : IDbService
             throw new ArgumentException("more then 10 medicaments");
         var table = dbContext.Medicament.Select(med => med.IdMedicament).ToList();
         var exists = prescriptionPostDto.Medicament
-            .Where(med => table.Any(medicament => medicament == med.IdMedicament))
+            .Where(med => table.All(medicament => medicament != med.IdMedicament))
             .ToList();
         if (exists.Any())
             throw new Exception();
